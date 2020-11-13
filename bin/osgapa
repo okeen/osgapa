@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require 'sorted_log_stats_extractor'
+
+if ARGV.count < 1
+  abort("You need to pass a file name as argument")
+end
+
+filename = ARGV[0]
+show_uniques = ARGV[1]
+
+puts SortedLogStatsExtractor.new.process(filename).to_a(show_uniques)
